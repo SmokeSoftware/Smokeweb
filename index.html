@@ -5,14 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SmokeWeb</title>
     <style>
-        /* Sayfanın sıfırlanması */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* Arka planın tam ekran olması için vücut kısmına stil */
         body {
             font-family: Arial, sans-serif;
             display: flex;
@@ -22,15 +20,16 @@
             background-image: url('sspic.png');
             background-size: cover;
             background-position: center;
+            background-attachment: fixed; /* Arka planın kaymasını önler */
             color: white;
             text-align: center;
         }
 
-        /* İçeriği ortalamak için basit bir kutu */
         .content {
-            background-color: rgba(0, 0, 0, 0.5); /* Arka planı yarı saydam yapar */
+            background-color: rgba(0, 0, 0, 0.5);
             padding: 20px;
             border-radius: 10px;
+            max-width: 90%; /* Mobil ekranlarda yan boşluk bırakır */
         }
 
         h1 {
@@ -40,6 +39,22 @@
 
         p {
             font-size: 1.2em;
+        }
+
+        /* Mobil cihazlar için uyum sağlama */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em; /* Başlık boyutunu küçült */
+            }
+
+            p {
+                font-size: 1em; /* Paragraf yazı boyutunu küçült */
+            }
+
+            .content {
+                padding: 15px; /* İç boşluğu azalt */
+                max-width: 100%; /* Mobilde tam genişlik */
+            }
         }
     </style>
 </head>
